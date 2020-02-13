@@ -56,8 +56,6 @@ vcpkg_configure_cmake(
 )
 endif()
 
-)
-
 vcpkg_install_cmake()
 
 file(RENAME ${CURRENT_PACKAGES_DIR}/include/freetype2/freetype ${CURRENT_PACKAGES_DIR}/include/freetype)
