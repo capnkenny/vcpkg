@@ -56,14 +56,6 @@ vcpkg_configure_cmake(
 )
 endif()
 
-vcpkg_configure_cmake(
-    SOURCE_PATH ${SOURCE_PATH}
-    PREFER_NINJA
-    OPTIONS
-        -DCONFIG_INSTALL_PATH=share/freetype
-        -DFT_WITH_ZLIB=ON # Force system zlib.
-        ${FEATURE_OPTIONS}
-        -DENABLE_DLL_EXPORT=${ENABLE_DLL_EXPORT}
 )
 
 vcpkg_install_cmake()
