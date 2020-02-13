@@ -31,6 +31,31 @@ else()
     set(ENABLE_DLL_EXPORT ON)
 endif()
 
+if(LINUX)
+vcpkg_configure_cmake(
+    SOURCE_PATH ${SOURCE_PATH}
+    PREFER_NINJA
+    OPTIONS
+        -DCONFIG_INSTALL_PATH=share/freetype
+        -DFT_WITH_ZLIB=ON # Force system zlib.
+		-DFT_WITH_HARFBUZZ=OFF # Can't build with Harfbuzz just yet - cyclic dependency
+        -DCMAKE_DISABLE_FIND_PACKAGE_HarfBuzz=TRUE
+        ${FEATURE_OPTIONS}
+        -DENABLE_DLL_EXPORT=${ENABLE_DLL_EXPORT}
+)
+message(WARNING "Linux cannot currently build with proper Harfbuzz support at this time. Continuing without Harfbuzz...")
+else()
+vcpkg_configure_cmake(
+    SOURCE_PATH ${SOURCE_PATH}
+    PREFER_NINJA
+    OPTIONS
+        -DCONFIG_INSTALL_PATH=share/freetype
+        -DFT_WITH_ZLIB=ON # Force system zlib.
+        ${FEATURE_OPTIONS}
+        -DENABLE_DLL_EXPORT=${ENABLE_DLL_EXPORT}
+)
+endif()
+
 vcpkg_configure_cmake(
     SOURCE_PATH ${SOURCE_PATH}
     PREFER_NINJA
