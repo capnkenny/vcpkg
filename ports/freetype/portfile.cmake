@@ -31,7 +31,7 @@ else()
     set(ENABLE_DLL_EXPORT ON)
 endif()
 
-if(LINUX)
+if(NOT WIN32)
 vcpkg_configure_cmake(
     SOURCE_PATH ${SOURCE_PATH}
     PREFER_NINJA
