@@ -22,7 +22,7 @@ jobs:
         run: '%GITHUB_WORKSPACE%/vcpkg.exe install freetype glfw3 glm gtest libsndfile lua openal-soft spdlog --triplet x64-windows'
         shell: cmd
       - name: 'Export dependencies'
-        run: '%GITHUB_WORKSPACE%/vcpkg.exe export freetype glfw3 glm gtest libsndfile lua openal-soft spdlog --zip'
+        run: '%GITHUB_WORKSPACE%/vcpkg.exe export freetype:x64-windows glfw3:x64-windows glm:x64-windows gtest:x64-windows libsndfile:x64-windows lua:x64-windows openal-soft:x64-windows spdlog:x64-windows --zip'
         shell: cmd
       - name: Create Release
         id: create_release
