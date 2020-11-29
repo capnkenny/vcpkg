@@ -7,7 +7,7 @@ on:
     branches: [ master ]
 
 jobs:
-NovelRTDeps_Winx64:
+  novelrtdeps-winx64:
     # The type of runner that the job will run on
     runs-on: windows-latest
     
