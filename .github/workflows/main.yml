@@ -25,7 +25,7 @@ jobs:
         run: '%GITHUB_WORKSPACE%/vcpkg.exe export freetype:x64-windows glfw3:x64-windows glm:x64-windows gtest:x64-windows libsndfile:x64-windows lua:x64-windows openal-soft:x64-windows spdlog:x64-windows --zip'
         shell: cmd
       - name: 'Rename zip file'
-        run: 'ls | Rename-Item -NewName {$_ -replace 'vcpkg-(.*)\.zip$', 'vcpkg.zip' }'
+        run: "ls | Rename-Item -NewName {$_ -replace 'vcpkg-(.*)\\.zip$', 'vcpkg.zip' }"
         shell: powershell
       - name: Create Release
         id: create_release
