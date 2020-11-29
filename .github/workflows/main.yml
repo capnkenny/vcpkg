@@ -5,7 +5,6 @@ name: Deps CI
 on:
   pull_request:
     branches: [ master ]
-  workflow_dispatch:
 
  NovelRTDeps_Winx64:
     # The type of runner that the job will run on
