@@ -6,7 +6,8 @@ on:
   pull_request:
     branches: [ master ]
 
- NovelRTDeps_Winx64:
+jobs:
+NovelRTDeps_Winx64:
     # The type of runner that the job will run on
     runs-on: windows-latest
     
